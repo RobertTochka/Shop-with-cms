@@ -9,7 +9,7 @@ datasource db {
 
 model User {
   id        String   @id @default(uuid())
-  createdAd DateTime @default(now()) @map("created_at")
+  createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
   email    String  @unique
@@ -28,11 +28,11 @@ model User {
 
 model Store {
   id        String   @id @default(uuid())
-  createdAd DateTime @default(now()) @map("created_at")
+  createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
   title       String
-  description String
+  description String?
 
   products   Product[]
   categories Category[]
@@ -48,7 +48,7 @@ model Store {
 
 model Product {
   id        String   @id @default(uuid())
-  createdAd DateTime @default(now()) @map("created_at")
+  createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
   title       String
@@ -76,7 +76,7 @@ model Product {
 
 model Category {
   id        String   @id @default(uuid())
-  createdAd DateTime @default(now()) @map("created_at")
+  createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
   title       String
@@ -92,7 +92,7 @@ model Category {
 
 model Color {
   id        String   @id @default(uuid())
-  createdAd DateTime @default(now()) @map("created_at")
+  createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
   name  String
@@ -108,7 +108,7 @@ model Color {
 
 model Review {
   id        String   @id @default(uuid())
-  createdAd DateTime @default(now()) @map("created_at")
+  createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
   text   String
@@ -128,7 +128,7 @@ model Review {
 
 model Order {
   id        String   @id @default(uuid())
-  createdAd DateTime @default(now()) @map("created_at")
+  createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
   status EnumOrderStatus @default(PENDING)
@@ -144,7 +144,7 @@ model Order {
 
 model OrderItem {
   id        String   @id @default(uuid())
-  createdAd DateTime @default(now()) @map("created_at")
+  createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
   quantity Int
