@@ -1,0 +1,20 @@
+import { PropsWithChildren } from 'react'
+
+import { Header } from './header/Header'
+import { Sidebar } from './sidebar/Sidebar'
+
+export function StoreLayout({ children }: PropsWithChildren<unknown>) {
+  return (
+    <div className='flex w-full flex-col'>
+      <div>
+        <div className='fixed inset-y-0 z-50 hidden h-full w-64 flex-col lg:flex'>
+          <Sidebar />
+        </div>
+        <div className='fixed inset-y-0 z-49 h-[70px] w-full lg:pl-64'>
+          <Header />
+        </div>
+        <main className='bg-white py-[70px] lg:pl-64'>{children}</main>
+      </div>
+    </div>
+  )
+}
