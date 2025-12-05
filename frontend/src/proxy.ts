@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { PUBLIC_URL } from './config/url.config'
 import { EnumTokens } from './services/auth/auth-token.service'
 
-export default async function middleware(request: NextRequest) {
+export default async function proxy(request: NextRequest) {
   const refreshToken = request.cookies.get(EnumTokens.REFRESH_TOKEN)?.value
 
   const isAuthPage = request.url.includes(PUBLIC_URL.auth())

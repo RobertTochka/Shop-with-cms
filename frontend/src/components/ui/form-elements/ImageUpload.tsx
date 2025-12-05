@@ -1,7 +1,7 @@
 import { ImagePlus } from 'lucide-react'
 import Image from 'next/image'
 
-import { useUpload } from '@/hooks/useUpload'
+import { useUpload } from '@/hooks/queries/useUpload'
 
 import { cn } from '@/utils/utils'
 
